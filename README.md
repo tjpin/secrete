@@ -1,4 +1,4 @@
-# `secrete` - Open Source Password Manager
+# `Secrete` - Open Source Password Manager
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -18,7 +18,7 @@ Welcome to the Open Source Password Manager repository! Our password manager app
 
 To get started with the Open Source Password Manager app, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/open-source-password-manager.git`
+1. Clone the repository: `git clone https://github.com/tjpin/secrete.git`
 2. Make sure you have latest flutter and dart versions by running `flutter doctor -v`.
 3. Install the necessary dependencies by running `flutter pub get`.
 4. Build database adapters `flutter packages pub run build_runner build`.
