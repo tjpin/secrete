@@ -1,0 +1,11 @@
+1. Open the Google Chrome or Brave app on your Android device.*
+2. Tap on the three vertical dots in the top-right corner of the screen to open the menu.*
+3. From the menu, select "Settings."*
+4. In the Settings menu, scroll down and tap on "Password Manager."*
+5. You'll see a list of all your saved passwords. Tap on the three vertical dots in the top-right corner of the screen.*
+6. From the options that appear, select "Export passwords."*
+7. Browser will prompt you to authenticate yourself, either with your device's PIN, pattern, or fingerprint, depending on your security settings. Provide the necessary authentication to proceed.*
+8. After authenticating, Browser will generate a file containing your exported passwords. You'll be asked where you want to save the file. Choose a location on your device's storage or select a cloud storage service such as Google Drive.*
+9. Once you've chosen the location, tap on "Save" or "Export," and the passwords file will be saved in the designated location.*
+10. Lastly open this app, on the top click any of menu icons (Left conner: 3 vertical bars or 3 vertical dots) and select import accounts; Else on the bottom navigation, click accounts, select imports tab and import account button on the center.*
+11. For security reasons, make sure to delete exported accounts after uploaded to this application.*

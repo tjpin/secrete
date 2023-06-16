@@ -1,0 +1,15 @@
+Welcome to our Open Source Password Manager!*
+
+Our password manager app is designed with privacy and security in mind. Unlike many other password managers, our app operates entirely offline and does not require an internet connection to function. This means that your sensitive data never leaves your device, providing you with an extra layer of protection.*
+Key Features*
+1. Local Storage: All your passwords and personal information are securely stored on your device. There is no need to worry about your data being uploaded to any online platform or server.*
+2. Open Source: We believe in transparency and empowering our users. That's why our source code is open and freely available for anyone to review and modify. You can have full confidence in the integrity and security of our app.*
+3. Strong Encryption: We employ robust encryption algorithms to ensure that your passwords and personal data remain confidential. Rest assured that even if your device is compromised, your information will remain secure.*
+4. Intuitive Interface: Our user-friendly interface makes it easy to manage your passwords, organize them into categories, and quickly access the information you need. We strive to provide a seamless and efficient user experience.*
+5. Customization: We understand that everyone has unique preferences and requirements. With our app, you have the flexibility to customize settings, such as password complexity rules, autofill options, and more, to suit your individual needs.*
+6. Strong Password Generator: Creating strong and unique passwords for each of your accounts is crucial for maintaining security. Our built-in password generator helps you generate complex passwords that are difficult to crack.*
+7. Backup and Restore: (COMING SOON) We provide options for backing up your encrypted data to an external location of your choice. This ensures that you always have a copy of your passwords in case of device loss or failure.*
+
+Your security and privacy are our top priorities. By utilizing our offline, open source password manager, you can take control of your sensitive information and keep it protected from prying eyes. We believe in empowering our users with a reliable and customizable tool that puts their security first.*
+Please note that while we take every precaution to ensure the security and functionality of our app, it is still essential to follow best practices for online safety. This includes regularly updating your device's operating system, using strong passwords, and being cautious of phishing attempts.*
+Thank you for choosing our Open Source Password Manager. We appreciate your support and trust in our commitment to privacy and security.*

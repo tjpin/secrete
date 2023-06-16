@@ -1,0 +1,20 @@
+Effective date: June 20, 2023,
+Our Open Source Password Manager ("I", "us", "we", or "our") operates as an offline password manager app that prioritizes your privacy and security. This Privacy Policy outlines the types of information we collect, how we use and protect that information, and the choices you have regarding your data.
+Information Collection and Use:*
+We do not collect any personal information or store any data outside of your device. All passwords, personal information, and any other data you input into the app are stored locally on your device, and we do not have access to it. We strongly believe in the principle of data minimization and strive to limit the collection and use of your information to the bare minimum necessary for the functioning of the app.
+Log Data*
+Our app does not collect any log data when you use it. No usage statistics, device information, or any other data is collected or transmitted to us or any third parties.
+Security:*
+We take the security of your information seriously. We employ industry-standard encryption algorithms to ensure that your passwords and personal data are securely stored on your device. However, please note that no method of transmission or storage over the internet is 100% secure, and we cannot guarantee absolute security. You are responsible for maintaining the security and confidentiality of your device and login credentials.
+Open Source Code*
+Our app's source code is open and freely available for anyone to review and modify. While we strive to maintain the integrity and security of our app, we cannot be held responsible for any modifications made by third parties to the open source code.
+Third-Party Services:*
+Our app does not integrate or connect with any third-party services, platforms, or servers. Your data remains solely on your device and is not shared with any external parties.
+Children's Privacy:*
+Our app is not intended for use by individuals under the age of 13. We do not knowingly collect any personal information from children. If we discover that we have inadvertently collected personal information from a child under the age of 13, we will promptly delete such information from our records.
+Changes to This Privacy Policy:
+We may update our Privacy Policy from time to time. Any changes to the policy will be posted on this page with a revised effective date. We encourage you to review this Privacy Policy periodically for any updates or changes.
+Contact Us:*
+If you have any questions, concerns, or feedback regarding this Privacy Policy or our app's privacy practices, please contact us at [insert contact email].
+By using our Open Source Password Manager, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy.
+This Privacy Policy is effective as of the date mentioned above and replaces any prior Privacy Policies associated with our app.
