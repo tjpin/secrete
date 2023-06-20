@@ -92,7 +92,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     authController.updateUser(User(
                       id: user.id,
                       username: _usernameController.text,
-                      quetions: user.quetions,
+                      questions: user.questions,
                       pincode: user.pincode,
                     ));
                     successToast('username updated successifuly');
@@ -140,7 +140,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               id: user.id,
                               pincode: _newPincodeController.text.trim(),
                               username: user.username,
-                              quetions: user.quetions));
+                              questions: user.questions));
                           successToast('pincode updated successifuly');
                           return;
                         }
@@ -219,7 +219,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             id: user.id,
                             pincode: user.pincode,
                             username: user.username,
-                            quetions: {
+                            questions: {
                               initialQuestion: _q1Controller.text,
                               initialQuestion2: _q2Controller.text,
                               initialQuestion3: _q3Controller.text,

@@ -1,5 +1,7 @@
 import 'package:secrete/core.dart';
+import 'package:secrete/models/indentification.dart';
 import 'package:secrete/models/themeset.dart';
+import 'package:secrete/models/wifi_account.dart';
 
 final databaseProvider = Provider((ref) => DatabaseHelper());
 
@@ -8,11 +10,15 @@ class DatabaseHelper {
   static Box<CardData> getCards() => Hive.box<CardData>('cards');
   static Box<Account> getAccount() => Hive.box<Account>('accounts');
   static Box<ThemeSet> getCurrentTheme() => Hive.box<ThemeSet>('themes');
+  static Box<WifiAccount> getCurrentWifiBox() =>
+      Hive.box<WifiAccount>('wifiaccounts');
+  static Box<Indentification> getCurrentIdentificationBox() =>
+      Hive.box<Indentification>('indentifications');
 
   static const rid = Uuid();
 
   // Themes
-
+  // /////////////////////////////////////////////////////////////////////
   bool currentThemeLight() {
     if (getCurrentTheme().isEmpty) {
       ThemeSet data = ThemeSet(id: rid.v4(), isLightTheme: true);
@@ -23,7 +29,7 @@ class DatabaseHelper {
   }
 
   /// Accounts
-
+  // /////////////////////////////////////////////////////////////////////
   void addAccount(Account account) {
     getAccount().put(account.id, account);
   }
@@ -75,8 +81,14 @@ class DatabaseHelper {
     getAccount().deleteAll(accountKeys);
   }
 
-  (int addedCount, int importedCount, int favoriteCount, int total)
-      accountCounts() {
+  (
+    int addedCount,
+    int importedCount,
+    int favoriteCount,
+    int wifiCount,
+    int idsCount,
+    int total
+  ) accountCounts() {
     final addedAccounts = getAccount()
         .values
         .toList()
@@ -92,16 +104,25 @@ class DatabaseHelper {
         .toList()
         .where((account) => account.isFavorite == true)
         .toList();
-    final totalCount = addedAccounts.length + importedAccounts.length;
+    final wifiAccounts = getCurrentWifiBox().values.toList();
+    final identificationAccounts =
+        getCurrentIdentificationBox().values.toList();
+    final totalCount = addedAccounts.length +
+        importedAccounts.length +
+        wifiAccounts.length +
+        identificationAccounts.length;
     return (
       addedAccounts.length,
       importedAccounts.length,
       favoriteAccounts.length,
+      wifiAccounts.length,
+      identificationAccounts.length,
       totalCount
     );
   }
 
   //cards
+  // /////////////////////////////////////////////////////////////////////
   void updateCard(CardData card) {
     getCards().put(card.id, card);
   }
@@ -112,5 +133,41 @@ class DatabaseHelper {
 
   void deleteAllCard() {
     getCards().clear();
+  }
+
+  // Wifis
+  // /////////////////////////////////////////////////////////////////////
+  void addWifi(WifiAccount wifi) {
+    getCurrentWifiBox().put(wifi.id, wifi);
+  }
+
+  void updateWifi(WifiAccount wifi) {
+    getCurrentWifiBox().put(wifi.id, wifi);
+  }
+
+  void deleteWifi(WifiAccount wifi) {
+    getCurrentWifiBox().delete(wifi.id);
+  }
+
+  void deleteAllWifi() {
+    getCurrentWifiBox().clear();
+  }
+
+  // Indentifications
+  // /////////////////////////////////////////////////////////////////////
+  void addIndentification(Indentification identity) {
+    getCurrentIdentificationBox().put(identity.id, identity);
+  }
+
+  void updateIndentification(Indentification identity) {
+    getCurrentIdentificationBox().put(identity.id, identity);
+  }
+
+  void deleteIndentification(Indentification identity) {
+    getCurrentIdentificationBox().delete(identity.id);
+  }
+
+  void deleteAllIndentification() {
+    getCurrentIdentificationBox().clear();
   }
 }

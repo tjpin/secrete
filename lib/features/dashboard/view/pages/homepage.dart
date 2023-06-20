@@ -1,8 +1,10 @@
+import 'dart:math';
+
+import 'package:pie_chart/pie_chart.dart';
 import 'package:secrete/constants/widgets/analysis_card.dart';
 import 'package:secrete/constants/widgets/gradient_card.dart';
 import 'package:secrete/core.dart';
 import 'package:secrete/features/dashboard/core.dart';
-import 'dart:math';
 
 CardType randomCardType(int i) {
   switch (i) {
@@ -66,23 +68,44 @@ class Homepage extends ConsumerWidget {
                   count: ctl.dbProvider.accountCounts().$3.toString(),
                   icon: Icons.favorite,
                 ),
+                AnalysisCard(
+                  title: "Wifi Accounts",
+                  count: ctl.dbProvider.accountCounts().$4.toString(),
+                  icon: Icons.favorite,
+                ),
+                AnalysisCard(
+                  title: "Saved IDs",
+                  count: ctl.dbProvider.accountCounts().$5.toString(),
+                  icon: Icons.favorite,
+                ),
               ],
             ).addAllPadding(10),
           ),
           hsizer(20),
-          Center(
-              child: CircleAvatar(
-            radius: 68,
-            backgroundColor: Colors.blue,
-            child: CircleAvatar(
-              radius: 60,
-              backgroundColor: ctx.primaryColor,
-              child: Text(
-                "${ctl.dbProvider.accountCounts().$4.toString()} Accounts",
-                style: ctx.textTheme.bodySmall,
-              ),
-            ),
-          )),
+          PieChart(
+              chartValuesOptions: const ChartValuesOptions(
+                  showChartValues: false, showChartValuesInPercentage: true),
+              colorList: [
+                Colors.blue,
+                Colors.teal,
+                Colors.deepOrange,
+                Colors.blue[900]!,
+                Colors.deepPurple
+              ],
+              chartRadius: 150,
+              emptyColor: Colors.black,
+              dataMap: {
+                'added':
+                    double.parse(ctl.dbProvider.accountCounts().$1.toString()),
+                'imported':
+                    double.parse(ctl.dbProvider.accountCounts().$2.toString()),
+                'favorite':
+                    double.parse(ctl.dbProvider.accountCounts().$3.toString()),
+                'Wi-Fi':
+                    double.parse(ctl.dbProvider.accountCounts().$4.toString()),
+                'IDs':
+                    double.parse(ctl.dbProvider.accountCounts().$5.toString()),
+              }),
         ],
       ),
     );

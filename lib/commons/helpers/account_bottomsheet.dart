@@ -6,7 +6,7 @@ import '../widgets/label.dart';
 
 Future<void> viewDetails(
     BuildContext context, ThemeData ctx, Account account) async {
-  showModalBottomSheet(
+  await showModalBottomSheet(
       context: context,
       builder: (context) => SizedBox(
             width: double.infinity,
@@ -15,9 +15,12 @@ Future<void> viewDetails(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Chip(
-                    avatar: const Icon(Icons.account_box_rounded),
+                    avatar: Icon(
+                      Icons.account_circle,
+                      color: ctx.iconTheme.color,
+                    ),
                     label: Text(account.name!),
-                    labelStyle: ctx.textTheme.bodyMedium,
+                    labelStyle: ctx.textTheme.bodySmall,
                   ),
                   AccountDetailField(
                     label: account.username!,

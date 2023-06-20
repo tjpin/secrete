@@ -22,6 +22,9 @@ class _CardDialogContainerState extends ConsumerState<CardDialogContainer> {
   CardType _defaultCardType = CardType.defaultCard;
   String expiryDate = '00 / 00';
 
+  final d1Node = FocusNode();
+  final d2Node = FocusNode();
+
   bool validateFields() {
     if (bankNameController.text.isNotEmpty &&
         cardNumberController.text.isNotEmpty &&
@@ -30,6 +33,18 @@ class _CardDialogContainerState extends ConsumerState<CardDialogContainer> {
         yearDateController.text.isNotEmpty &&
         expiryDate != '00 / 00') return true;
     return false;
+  }
+
+  @override
+  void dispose() {
+    bankNameController.dispose();
+    cardNumberController.dispose();
+    cvvNumberController.dispose();
+    monthDateController.dispose();
+    yearDateController.dispose();
+    d1Node.dispose();
+    d2Node.dispose();
+    super.dispose();
   }
 
   @override
@@ -63,7 +78,7 @@ class _CardDialogContainerState extends ConsumerState<CardDialogContainer> {
             label(ctx, 'Card Number'),
             InputField(
                 hint: '',
-                textChanged: (_) {},
+                textChanged: (String v) {},
                 maxLength: 16,
                 keyboardType: TextInputType.number,
                 style: ctx.textTheme.bodyMedium!,
@@ -84,13 +99,21 @@ class _CardDialogContainerState extends ConsumerState<CardDialogContainer> {
               children: [
                 Text(expiryDate),
                 const Spacer(),
-                expiryDateInput(ctx, 'MM', monthDateController, (v) {}),
+                expiryDateInput(ctx, 'MM', d1Node, monthDateController,
+                    (String v) {
+                  if (v.length == 2) {
+                    FocusScope.of(context).requestFocus(d2Node);
+                  }
+                }),
                 const Text("/").addHPadding(15),
-                expiryDateInput(ctx, 'YY', yearDateController, (v) {
+                expiryDateInput(ctx, 'YY', d2Node, yearDateController, (v) {
                   setState(() {
                     expiryDate =
                         monthDateController.text + yearDateController.text;
                   });
+                  if (v.length == 2) {
+                    FocusScope.of(context).unfocus();
+                  }
                 }),
               ],
             ),
@@ -128,7 +151,8 @@ class _CardDialogContainerState extends ConsumerState<CardDialogContainer> {
                     ),
                     DropdownMenuItem(
                       value: CardType.amex,
-                      child: buildRowItem(ctx, CardType.amex, 'American Express'),
+                      child:
+                          buildRowItem(ctx, CardType.amex, 'American Express'),
                     ),
                     DropdownMenuItem(
                       value: CardType.maestro,
@@ -202,7 +226,7 @@ Widget buildRowItem(ThemeData ctx, CardType cardType, String label) {
   ).addVPadding(5);
 }
 
-Widget expiryDateInput(ThemeData ctx, String label,
+Widget expiryDateInput(ThemeData ctx, String label, FocusNode node,
         TextEditingController controller, Function textChanged) =>
     SizedBox(
       width: 60,
@@ -210,6 +234,7 @@ Widget expiryDateInput(ThemeData ctx, String label,
         maxLength: 2,
         onChanged: (v) => textChanged(v),
         controller: controller,
+        focusNode: node,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
             contentPadding: const EdgeInsets.only(left: 20),

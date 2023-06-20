@@ -23,7 +23,7 @@ class _PinResetScreenState extends ConsumerState<PinResetScreen> {
   static const uid = Uuid();
 
   List<DropdownMenuItem<String>>? items;
-  String initialQuestion = securityQuestions.keys.first;
+  String initialQuestion1 = securityQuestions.keys.first;
   String initialQuestion2 = securityQuestions.keys.toList()[1];
   String initialQuestion3 = securityQuestions.keys.last;
 
@@ -34,6 +34,15 @@ class _PinResetScreenState extends ConsumerState<PinResetScreen> {
     _pinController.clear();
   }
 
+  @override
+  void dispose() {
+    _q1Controller.dispose();
+    _q2Controller.dispose();
+    _q3Controller.dispose();
+    _pinController.dispose();
+    super.dispose();
+  }
+
   bool validateFields() {
     return _q1Controller.text.isNotEmpty ||
         _q2Controller.text.isNotEmpty ||
@@ -42,18 +51,18 @@ class _PinResetScreenState extends ConsumerState<PinResetScreen> {
 
   bool validateQuestions(User user) {
     /// List of user saved questions and answers.
-    final qsMap = user.quetions!;
+    final qsMap = user.questions!;
 
     /// List of user saved questions.
-    final qs = user.quetions!.keys.toList();
+    final qs = user.questions!.keys.toList();
 
     if (validateFields()) {
-      if (qs.contains(initialQuestion.trim()) &&
-              qsMap[initialQuestion.trim()] == _q1Controller.text.trim() ||
+      if (qs.contains(initialQuestion1.trim()) &&
+          qsMap[initialQuestion1]!.trim() == _q1Controller.text.trim() &&
           qs.contains(initialQuestion2.trim()) &&
-              qsMap[initialQuestion2.trim()] == _q2Controller.text.trim() ||
+          qsMap[initialQuestion2]!.trim() == _q2Controller.text.trim() &&
           qs.contains(initialQuestion3.trim()) &&
-              qsMap[initialQuestion3.trim()] == _q3Controller.text.trim()) {
+          qsMap[initialQuestion3]!.trim() == _q3Controller.text.trim()) {
         setState(() {
           validated = true;
         });
@@ -107,11 +116,11 @@ class _PinResetScreenState extends ConsumerState<PinResetScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DropdownButton(
-                  value: initialQuestion,
+                  value: initialQuestion1,
                   items: items,
                   onChanged: (question) {
                     setState(() {
-                      initialQuestion = question!;
+                      initialQuestion1 = question!;
                     });
                   }).addVPadding(5),
               InputField(
@@ -194,7 +203,7 @@ class _PinResetScreenState extends ConsumerState<PinResetScreen> {
                               {
                                 User updateduser = User(
                                     id: user.id, pincode: _pinController.text)
-                                  ..quetions = user.quetions
+                                  ..questions = user.questions
                                   ..username = user.username;
                                 auth.updateUser(updateduser);
                                 clearFields();

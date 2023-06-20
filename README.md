@@ -14,6 +14,10 @@ Welcome to the Open Source Password Manager repository! Our password manager app
 - **Strong Password Generator:** Create strong and unique passwords with our built-in password generator, helping you enhance the security of your accounts.
 - **Backup and Restore:** Safeguard your encrypted data by creating backups to external storage locations of your choice. Restore your passwords in case of device loss or failure.
 
+## Database
+
+- This projects runs `Hive` Database which is faster and and efficient. see [Hive Docs](https://docs.hivedb.dev/#/) for more details.
+
 ## Getting Started
 
 To get started with the Open Source Password Manager app, follow these steps:
@@ -24,6 +28,10 @@ To get started with the Open Source Password Manager app, follow these steps:
 4. Build database adapters `flutter packages pub run build_runner build`.
 5. Run the app either on emulator(**Recommended**) or real device(**Not recommended**) `flutter run`.
 
+## Testing
+
+Unfortunitly tests were not included.
+
 ## Contributing
 
 We welcome contributions from the community to enhance and improve the Open Source Password Manager app. To contribute, please follow these guidelines:
@@ -33,16 +41,16 @@ We welcome contributions from the community to enhance and improve the Open Sour
 3. Push to your branch: `git push origin dev`.
 4. Open a pull request, describing your changes in detail.
 
-Please ensure that your contributions adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
-Please ensure that your contributions adhere to our [Code of Conduct](Contributor_Covenant.md).
+Please ensure that your contributions adhere to our [Code of Conduct](/CODE_OF_CONDUCT.md).
+Please ensure that your contributions adhere to our [Code of Conduct](/Contributor_Covenant.md).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the app in accordance with the terms of the license.
+This project is licensed under the [MIT License](/licence.md). You are free to use, modify, and distribute the app in accordance with the terms of the license.
 
 ## Contact
 
-If you have any questions or feedback, please don't hesitate to reach out. You can contact us at [chairmanstudios8@gmail.com](Email).
+If you have any questions or feedback, please don't hesitate to reach out. You can contact us at [chairmanstudios8@gmail.com](mailto:chairmanstudios8@gmail.com).
 
 Thank you for your interest in the Open Source Password Manager app!
 

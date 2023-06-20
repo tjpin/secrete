@@ -61,12 +61,15 @@ ThemeData lightTheme() => ThemeData(
     buttonTheme: ButtonThemeData(buttonColor: mainBlack),
     textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-            foregroundColor: mainBlack, backgroundColor: Colors.transparent)),
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+            foregroundColor: mainBlack,
+            backgroundColor: Colors.transparent)),
     cardTheme: CardTheme(color: mainWhite, elevation: 1),
     bottomSheetTheme: BottomSheetThemeData(
         modalBackgroundColor: mainWhite, backgroundColor: mainWhite));
 
+/// Dark Theme
+/// ///////////////////////////////////////////////////
 HexColor mainDark = HexColor('#262424');
 
 ThemeData darkTheme() => ThemeData(
@@ -107,16 +110,35 @@ ThemeData darkTheme() => ThemeData(
             color: mainWhite, fontSize: 22, fontWeight: FontWeight.bold)),
     iconTheme: IconThemeData(color: mainWhite.withOpacity(0.5), size: 25),
     chipTheme: const ChipThemeData(backgroundColor: Colors.black87),
+    textSelectionTheme: TextSelectionThemeData(
+        cursorColor: mainWhite.withOpacity(0.5),
+        selectionColor: mainOrange,
+        selectionHandleColor: mainOrange),
+
     datePickerTheme: DatePickerThemeData(
+      backgroundColor: mainBlack,
       dayForegroundColor: MaterialStateProperty.all(mainWhite),
-      dayBackgroundColor: MaterialStateProperty.all(Colors.black),
-      dayStyle: TextStyle(color: mainWhite, fontSize: 14),
       dayOverlayColor: MaterialStateProperty.all(Colors.grey),
-      yearStyle: TextStyle(color: mainWhite),
-      yearBackgroundColor: MaterialStateProperty.all(mainDark),
-      yearOverlayColor: MaterialStateProperty.all(mainBlack),
-      headerForegroundColor: mainOrange,
-      weekdayStyle: TextStyle(color: mainWhite.withOpacity(0.5)),
+      dayStyle: TextStyle(color: mainWhite, fontSize: 14),
+      headerForegroundColor: mainWhite,
+      headerBackgroundColor: darkBlack,
+      todayBackgroundColor: MaterialStateProperty.all(mainWhite),
+      headerHeadlineStyle: TextStyle(color: mainWhite),
+      rangePickerHeaderBackgroundColor: Colors.orange,
+      rangePickerHeaderHeadlineStyle: TextStyle(color: mainWhite),
+      rangePickerHeaderForegroundColor: Colors.orange,
+      rangePickerBackgroundColor: mainOrange,
+      rangeSelectionOverlayColor: MaterialStateProperty.all(mainWhite),
+      rangePickerHeaderHelpStyle: TextStyle(color: mainWhite),
+      rangeSelectionBackgroundColor: mainWhite,
+      rangePickerSurfaceTintColor: mainOrange,
+      shadowColor: mainWhite,
+      yearBackgroundColor: MaterialStateProperty.all(mainBlack),
+      yearStyle: TextStyle(color: mainOrange),
+      yearForegroundColor: MaterialStateProperty.all(mainOrange),
+      yearOverlayColor: MaterialStateProperty.all(mainWhite),
+      todayForegroundColor: MaterialStateProperty.all(mainOrange),
+      weekdayStyle: TextStyle(color: mainWhite.withOpacity(0.5), fontSize: 15),
     ),
     listTileTheme: ListTileThemeData(
       tileColor: mainDark,
@@ -129,14 +151,16 @@ ThemeData darkTheme() => ThemeData(
     ),
     buttonTheme: ButtonThemeData(buttonColor: mainWhite),
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(Colors.white54,),
-        backgroundColor: MaterialStateProperty.all(Colors.black,),
-      )
-    ),
+        style: ButtonStyle(
+      foregroundColor: MaterialStateProperty.all(
+        Colors.white54,
+      ),
+      backgroundColor: MaterialStateProperty.all(
+        Colors.black,
+      ),
+    )),
     textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-            foregroundColor: mainDark)),
+        style: TextButton.styleFrom(foregroundColor: mainDark)),
     cardTheme: CardTheme(color: mainDark, elevation: 1),
     bottomSheetTheme: BottomSheetThemeData(
         modalBackgroundColor: mainDark, backgroundColor: mainDark));

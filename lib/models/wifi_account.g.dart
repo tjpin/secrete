@@ -1,41 +1,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user.dart';
+part of 'wifi_account.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class UserAdapter extends TypeAdapter<User> {
+class WifiAccountAdapter extends TypeAdapter<WifiAccount> {
   @override
-  final int typeId = 4;
+  final int typeId = 5;
 
   @override
-  User read(BinaryReader reader) {
+  WifiAccount read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return User(
+    return WifiAccount(
       id: fields[0] as String,
-      username: fields[2] as String?,
-      questions: (fields[3] as Map?)?.cast<String, String>(),
-      pincode: fields[1] as String,
+      name: fields[1] as String,
+      password: fields[2] as String,
+      location: fields[3] as String?,
+      pin: fields[4] as String?,
+      adminUsername: fields[5] as String?,
+      adminPassword: fields[6] as String?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, User obj) {
+  void write(BinaryWriter writer, WifiAccount obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.pincode)
+      ..write(obj.name)
       ..writeByte(2)
-      ..write(obj.username)
+      ..write(obj.password)
       ..writeByte(3)
-      ..write(obj.questions);
+      ..write(obj.location)
+      ..writeByte(4)
+      ..write(obj.pin)
+      ..writeByte(5)
+      ..write(obj.adminUsername)
+      ..writeByte(6)
+      ..write(obj.adminPassword);
   }
 
   @override
@@ -44,7 +53,7 @@ class UserAdapter extends TypeAdapter<User> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is UserAdapter &&
+      other is WifiAccountAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

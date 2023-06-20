@@ -48,7 +48,9 @@ class ExistingLogin extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton.icon(
-                onPressed: () => auth.authenticate(context),
+                onPressed: () => auth.authenticate(
+                  () => Navigator.of(context).pushReplacementNamed(Dashboard.routeName)
+                ),
                 icon: const Icon(
                   Icons.fingerprint,
                   color: Colors.teal,

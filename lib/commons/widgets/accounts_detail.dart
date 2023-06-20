@@ -12,7 +12,7 @@ class AccountDetailField extends StatelessWidget {
     final ctx = Theme.of(context);
     return TextField(
       readOnly: true,
-      style: ctx.textTheme.bodyMedium,
+      style: ctx.textTheme.bodyMedium!.copyWith(fontSize: 16),
       controller: TextEditingController(text: label),
       decoration: InputDecoration(
           suffixIcon: IconButton(
@@ -20,14 +20,15 @@ class AccountDetailField extends StatelessWidget {
                 Clipboard.setData(ClipboardData(text: label));
                 successToast("Copied to clipboard");
               },
+              iconSize: 15,
               icon: Icon(
                 Icons.copy,
                 color: ctx.iconTheme.color,
               )),
-          enabledBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey)),
-          focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey))),
+          enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: ctx.iconTheme.color!.withOpacity(0.2))),
+          focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: ctx.iconTheme.color!.withOpacity(0.2)))),
     );
   }
 }

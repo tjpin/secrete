@@ -1,31 +1,16 @@
 // import 'package:path_provider/path_provider.dart';
 import 'package:secrete/core.dart';
-import 'package:secrete/models/themeset.dart';
 import 'package:secrete/utils/themes.dart';
-
+import 'database/constants/db_constants.dart';
 import 'features/auth/view/pin_reset.dart';
 import 'features/dashboard/core.dart';
 import 'features/settings/settings.dart';
-import 'security/db_encryption.dart';
+import 'models/themeset.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-
-  Hive.registerAdapter(AccountAdapter());
-  Hive.registerAdapter(CardDataAdapter());
-  Hive.registerAdapter(CardTypeAdapter());
-  Hive.registerAdapter(ThemeSetAdapter());
-  Hive.registerAdapter(UserAdapter());
-
-  await Hive.openBox<User>("users",
-      encryptionCipher: HiveAesCipher(await encryption()));
-  await Hive.openBox<CardData>("cards",
-      encryptionCipher: HiveAesCipher(await encryption()));
-  await Hive.openBox<Account>("accounts",
-      encryptionCipher: HiveAesCipher(await encryption()));
-  await Hive.openBox<ThemeSet>("themes",
-      encryptionCipher: HiveAesCipher(await encryption()));
+  await initializeDatabase();
 
   await dotenv.load(fileName: '.env');
 

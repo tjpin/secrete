@@ -15,12 +15,12 @@ class User {
   String? username;
 
   @HiveField(3)
-  Map<String, String>? quetions;
+  Map<String, String>? questions;
 
   User({
     required this.id,
     this.username,
-    this.quetions,
+    this.questions,
     required this.pincode,
   });
 }

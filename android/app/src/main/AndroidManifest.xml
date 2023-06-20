@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.passman.chairman_studios.secrete">
+    package="com.example.password_manager">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="secrete"
+        android:label="Secret"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"

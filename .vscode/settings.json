@@ -1,0 +1,13 @@
+{
+	"dart.analyzeAngularTemplates": false,
+	"dart.analysisServerFolding": false,
+	"editor.tabSize": 4,
+	"editor.indentSize": "tabSize",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"[dart]": {
+		"editor.tabSize": 4,
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": false,
+	},
+}

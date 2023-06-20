@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
@@ -10,6 +9,8 @@ class InputField extends StatelessWidget {
   final double? fieldHeight;
   final double? borderRadius;
   final double? cpadding;
+  final bool? isPassword;
+  final FocusNode? focusNode;
   final TextInputType? keyboardType;
   final TextEditingController controller;
   final int? maxLength;
@@ -20,6 +21,8 @@ class InputField extends StatelessWidget {
     this.icon,
     this.hint,
     this.cpadding,
+    this.isPassword,
+    this.focusNode,
     this.fieldHeight,
     this.keyboardType,
     this.maxLength,
@@ -37,6 +40,8 @@ class InputField extends StatelessWidget {
       controller: controller,
       style: style,
       cursorColor: style.color,
+      focusNode: focusNode,
+      obscureText: isPassword ?? false,
       onChanged: (_) => textChanged!(_) ?? (_) {},
       decoration: InputDecoration(
           suffixIcon: icon ?? const Text(""),

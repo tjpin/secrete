@@ -28,10 +28,9 @@ class AuthController {
     DatabaseHelper.getUserBox().clear();
   }
 
-  Map<String, String> getQuestions()  {
-    return  getSavedUser().quetions ?? {};
+  Map<String, String> getQuestions() {
+    return getSavedUser().questions ?? {};
   }
-
 
   void authenticateCode(BuildContext context, String code) async {
     final pincode = getSavedUser().pincode;
@@ -53,14 +52,14 @@ class AuthController {
     return canAuthenticate;
   }
 
-  Future<void> authenticate(BuildContext context) async {
+  Future<void> authenticate(Function action) async {
     final bool canAuth = await canAuthenticate();
     if (canAuth) {
       try {
         final didAuthenticate = await auth.authenticate(
             localizedReason: "Please Authenticate to access your account");
         if (didAuthenticate) {
-          Navigator.of(context).pushReplacementNamed(Dashboard.routeName);
+          action();
           return;
         }
       } on PlatformException {

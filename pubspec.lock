@@ -363,6 +363,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  flutter_speed_dial:
+    dependency: "direct main"
+    description:
+      name: flutter_speed_dial
+      sha256: "698a037274a66dbae8697c265440e6acb6ab6cae9ac5f95c749e7944d8f28d41"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -679,6 +687,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.4.0"
+  pie_chart:
+    dependency: "direct main"
+    description:
+      name: pie_chart
+      sha256: "5dba6d0eb4718e8ed00a9079361cd8947c3f84ac5a5d76f05a27f4ec5e27589e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.3.2"
   platform:
     dependency: transitive
     description:
@@ -860,6 +876,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  tutorial_coach_mark:
+    dependency: "direct main"
+    description:
+      name: tutorial_coach_mark
+      sha256: "669d4bd517d22e14671f3ddee0e7442d976ab71f94bb6eec6ad057ca3944fd73"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.8"
   typed_data:
     dependency: transitive
     description:
@@ -988,6 +1012,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  wifi_iot:
+    dependency: "direct main"
+    description:
+      name: wifi_iot
+      sha256: "6c8d014ca935a893e1bfe0589a6e848a9027678237f856754da99e7bab3cf36b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.18"
   win32:
     dependency: transitive
     description:

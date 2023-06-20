@@ -14,11 +14,19 @@ class _AccountSearchPageState extends State<AccountSearchPage> {
       List<Account>.from(DatabaseHelper.getAccount().values);
   List<Account> filteredAccounts = [];
   final _searchController = TextEditingController();
+  final _focusNode = FocusNode();
 
   @override
   void dispose() {
     _searchController.dispose();
+    _focusNode.removeListener(() {});
     super.dispose();
+  }
+
+  @override
+  didChangeDependencies() {
+    FocusScope.of(context).requestFocus(_focusNode);
+    super.didChangeDependencies();
   }
 
   void _filterAccounts(String v) {
@@ -43,6 +51,7 @@ class _AccountSearchPageState extends State<AccountSearchPage> {
         title: InputField(
           style: ctx.textTheme.bodyMedium!,
           controller: _searchController,
+          focusNode: _focusNode,
           borderRadius: 25,
           hasBorder: true,
           cpadding: 30,

@@ -3,7 +3,7 @@ import 'package:secrete/core.dart';
 import 'package:secrete/features/dashboard/core.dart';
 import 'package:secrete/features/dashboard/view/pages/cards/update_card.dart';
 
-import 'helpers/card_dislog.dart';
+import 'helpers/card_dialog.dart';
 
 class BankCardsPage extends ConsumerStatefulWidget {
   const BankCardsPage({super.key});

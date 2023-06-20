@@ -135,7 +135,7 @@ class _SecurityQuestionsScreenState
                               id: uid.v4(),
                               pincode: routeData['pincode'].toString())
                             ..username = routeData['username'].toString()
-                            ..quetions = {
+                            ..questions = {
                               initialQuestion: _q1Controller.text,
                               initialQuestion2: _q2Controller.text,
                               initialQuestion3: _q3Controller.text

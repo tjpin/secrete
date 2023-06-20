@@ -21,6 +21,9 @@ class _AddAccountDialogState extends ConsumerState<UpdateCardDialog> {
   late String newExpiryDate;
   var favoritedValue = false;
 
+  final n1Node = FocusNode();
+  final n2Node = FocusNode();
+
   void clearFields() {
     bankNameController.clear();
     cardNumberController.clear();
@@ -106,9 +109,10 @@ class _AddAccountDialogState extends ConsumerState<UpdateCardDialog> {
                 children: [
                   Text(widget.card.expiryDate.toString()),
                   const Spacer(),
-                  expiryDateInput(ctx, 'MM', monthDateController, (v) {}),
+                  expiryDateInput(
+                      ctx, 'MM', n1Node, monthDateController, (v) {}),
                   const Text("/").addHPadding(15),
-                  expiryDateInput(ctx, 'YY', yearDateController, (v) {
+                  expiryDateInput(ctx, 'YY', n2Node, yearDateController, (v) {
                     setState(() {
                       newExpiryDate =
                           "${monthDateController.text}${yearDateController.text}";
@@ -154,7 +158,8 @@ class _AddAccountDialogState extends ConsumerState<UpdateCardDialog> {
                       ),
                       DropdownMenuItem(
                         value: CardType.amex,
-                        child: buildRowItem(ctx, CardType.amex, 'American Express'),
+                        child: buildRowItem(
+                            ctx, CardType.amex, 'American Express'),
                       ),
                     ],
                     onChanged: (t) => setState(() => newCardType = t!)),

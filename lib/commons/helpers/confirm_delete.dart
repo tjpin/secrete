@@ -6,14 +6,13 @@ confirmDelete(BuildContext cx, VoidCallback deleteAction) async {
       context: cx,
       builder: (cx) => Dialog(
             child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              height: 120,
               child: Column(
                 children: [
-                  Chip(
-                      label: Text("Confirm",
-                          style: ctx.textTheme.bodyMedium!
-                              .copyWith(color: Colors.red))),
+                  Text("Confirm",
+                      style: ctx.textTheme.bodyMedium!
+                          .copyWith(color: Colors.red)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -23,9 +22,9 @@ confirmDelete(BuildContext cx, VoidCallback deleteAction) async {
                       ),
                       MaterialButton(
                         onPressed: () {
-                            deleteAction();
-                            Navigator.pop(cx);
-                            },
+                          deleteAction();
+                          Navigator.pop(cx);
+                        },
                         child: const Text("Delete"),
                       ),
                     ],
